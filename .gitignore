@@ -1,0 +1,38 @@
+# ═══════════════════════════════════════════════════════════════
+# .gitignore - Archivo para ignorar en Git
+# ═══════════════════════════════════════════════════════════════
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node (si se usa en el futuro)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Archivos temporales
+*.tmp
+*.log
+*.bak
+
+# Compilados
+dist/
+build/
+
+# Archivos personales no compartibles
+.env
+.env.local
+config.local.js
+
+# Carpetas de terceros
+vendor/

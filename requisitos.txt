@@ -1,0 +1,219 @@
+================================================================
+   TOMA DE REQUISITOS — PORTFOLIO PERSONAL
+   Estética Y2K / Serial Experiments Lain
+================================================================
+Fecha: 24/03/2026
+Estado: Borrador inicial
+================================================================
+
+
+1. DESCRIPCIÓN GENERAL DEL PROYECTO
+------------------------------------
+Desarrollo de un portfolio personal en formato web estático
+(HTML5, CSS3, JavaScript vanilla) con una estética visual
+inspirada en la serie de anime "Serial Experiments Lain" y
+la cultura visual de los años 2000 (Y2K / CRT aesthetic).
+
+El portfolio debe transmitir la sensación de estar navegando
+en una televisión o monitor CRT de la época, con efectos
+visuales que recuerden a interfaces de sistemas operativos
+retro, ruido de señal, scanlines y paleta de color oscura.
+
+
+2. TECNOLOGÍAS REQUERIDAS
+--------------------------
+- HTML5 (estructura semántica)
+- CSS3 (estilos, animaciones, efectos visuales)
+- JavaScript (vanilla, sin frameworks)
+- Compatible con navegadores modernos
+- Sin dependencias de backend (100% estático)
+
+
+3. REQUISITOS VISUALES / ESTÉTICOS
+------------------------------------
+3.1 Efecto CRT / Televisión años 2000
+   - Efecto scanlines sobre toda la pantalla (líneas horizontales
+     semitransparentes que simulan el barrido de un tubo de rayos catódicos)
+   - Efecto de curvatura o viñeta en los bordes de la pantalla
+   - Ruido/glitch visual (parpadeos, distorsión de color ocasional)
+   - Paleta de colores oscura, predominantemente negra con acentos en:
+     verde fosforescente, cian, blanco apagado y tonos azul oscuro
+   - Tipografía monoespaciada / terminal (estilo consola o sistema operativo
+     retro). Ejemplo: fuentes como "VT323", "Share Tech Mono", "Courier New"
+   - Interfaz con aspecto de sistema operativo antiguo o interfaz hacker
+
+3.2 Inspiración directa — Serial Experiments Lain
+   - Estética oscura, distorsionada, con sensación de inmersión digital
+   - Elementos de interfaz que parezcan ventanas de sistema o terminales
+   - Texto que aparezca con efecto de escritura (typewriter effect)
+   - Posibles referencias visuales a capas, cables, redes
+   - Atmósfera de "estar dentro de la pantalla"
+
+3.3 Personaje anime (GIF)
+   - Se debe poder colocar un GIF de un personaje de anime en la interfaz
+     (similar a los ejemplos de referencia proporcionados)
+   - El GIF estará posicionado de forma decorativa en la UI
+   - Debe ser fácilmente reemplazable (variable o ruta configurable)
+
+
+4. ESTRUCTURA DE PÁGINAS / SECCIONES
+--------------------------------------
+El portfolio estará organizado como un sistema de "canales de televisión"
+donde el usuario cambia de canal para navegar entre secciones.
+
+4.1 PANTALLA PRINCIPAL / HOME
+   - Pantalla de bienvenida con estética CRT encendiéndose
+   - Botones de navegación a:
+       [a] GitHub (enlace externo, abre en nueva pestaña)
+       [b] Twitter/X (enlace externo, abre en nueva pestaña)
+       [c] Proyectos (navega a sección interna)
+       [d] Sobre mí / Presentación (navega a sección interna)
+   - Icono/personaje con cuadro de diálogo interactivo (ver punto 4.5)
+   - GIF de personaje anime decorativo
+
+4.2 SECCIÓN: PROYECTOS
+   - Página independiente con la misma estética visual
+   - Por ahora vacía / placeholder ("próximamente", "cargando...", etc.)
+   - Preparada para añadir proyectos en el futuro
+   - Misma interfaz de "canal de TV"
+
+4.3 SECCIÓN: SOBRE MÍ (con sistema de canales internos)
+   Sistema de sub-navegación por "canales" dentro de esta sección.
+   El usuario puede cambiar de canal con botones o controles visuales.
+
+   Canal 1 — PRESENTACIÓN
+      - Texto de presentación personal (editable)
+      - Breve bio o descripción del desarrollador
+
+   Canal 2 — TOOLS / LENGUAJES Y TECNOLOGÍAS
+      Sub-canal 2a: Lenguajes de programación (iconos + nombres)
+      Sub-canal 2b: Librerías y Frameworks (iconos + nombres)
+      Sub-canal 2c: Bases de datos (iconos + nombres)
+      Sub-canal 2d: DevOps/Tools (Docker, Git, etc.) (iconos + nombres)
+
+   Canal 3 — APPS QUE USO
+      - Lista visual de aplicaciones del día a día
+        Ejemplos: VSCode, Visual Studio, Obsidian, etc.
+      - Presentación con iconos o tarjetas en estética retro
+      - GIF de personaje anime visible en esta sección (referencia ejemplo2/3)
+
+4.4 SISTEMA DE CAMBIO DE CANAL
+   - Controles visuales de "cambiar canal" (flechas arriba/abajo o
+     botones con números de canal)
+   - Animación de transición entre canales (efecto estático/glitch
+     o fundido a negro al estilo televisión)
+   - Indicador visual del canal actual (número de canal en pantalla,
+     estilo HUD de televisor antiguo)
+
+4.5 PERSONAJE CON CUADRO DE DIÁLOGO INTERACTIVO
+   - Un icono o sprite de personaje visible en la interfaz principal
+   - Al hacer clic sobre él, aparece un cuadro de diálogo al estilo
+     cómic/visual novel con una frase
+   - Cada clic muestra una frase diferente (rotación entre frases)
+   - Las frases serán personalizables (array editable en el código JS)
+   - El cuadro de diálogo debe tener estética coherente con el resto
+     de la UI (bordes pixelados, fuente monoespaciada, colores CRT)
+
+
+5. REQUISITOS TÉCNICOS / FUNCIONALES
+--------------------------------------
+5.1 Responsive Design
+   - La web debe funcionar correctamente en dispositivos móviles
+   - Diseño adaptable: móvil (< 768px), tablet (768–1024px), escritorio (> 1024px)
+   - Los efectos CRT pueden simplificarse en móvil para no penalizar rendimiento
+   - Los controles de "cambio de canal" deben ser táctiles en móvil
+
+5.2 Rendimiento
+   - Evitar recursos pesados que ralenticen la carga
+   - El GIF del personaje debe ser optimizado
+   - Animaciones con preferencia a CSS sobre JS para mejor rendimiento
+
+5.3 Personalización / Mantenimiento
+   - Las frases del cuadro de diálogo deben ser fáciles de editar
+     (array de strings en un fichero JS o sección clara del código)
+   - La ruta del GIF del personaje debe ser fácilmente reemplazable
+   - Los enlaces de GitHub y Twitter deben estar en variables configurables
+   - Los iconos de tecnologías deben ser fáciles de añadir o quitar
+
+5.4 Accesibilidad básica
+   - Textos alternativos en imágenes y GIFs
+   - Navegación funcional con teclado (básica)
+   - Contraste suficiente para la legibilidad del texto principal
+
+5.5 Estructura de archivos sugerida
+   /portfolio
+   ├── index.html             (pantalla principal)
+   ├── proyectos.html         (sección proyectos — vacía)
+   ├── sobre-mi.html          (sección sobre mí con canales)
+   ├── /css
+   │   ├── main.css           (estilos globales, variables)
+   │   ├── crt-effects.css    (efectos scanline, glitch, curvatura)
+   │   └── responsive.css     (media queries)
+   ├── /js
+   │   ├── config.js          (enlaces, frases, rutas configurables)
+   │   ├── channels.js        (lógica cambio de canal)
+   │   ├── dialog.js          (lógica cuadro de diálogo personaje)
+   │   └── glitch.js          (efectos visuales dinámicos)
+   ├── /assets
+   │   ├── /gif               (personaje anime GIF)
+   │   ├── /icons             (iconos de tecnologías)
+   │   └── /sounds            (opcional: sonido estático de TV)
+   └── README.md
+
+
+6. ASSETS A PROPORCIONAR POR EL USUARIO
+-----------------------------------------
+Los siguientes recursos deberá proporcionarlos el usuario
+antes de la implementación o para la versión final:
+
+   [ ] GIF del personaje de anime (formato .gif o .webp animado)
+   [ ] Texto de presentación personal
+   [ ] Lista definitiva de lenguajes, frameworks y herramientas
+   [ ] Lista de aplicaciones para el "canal de apps"
+   [ ] Frases para el cuadro de diálogo del personaje
+   [ ] URL del perfil de GitHub
+   [ ] URL del perfil de Twitter/X
+   [ ] (Opcional) Nombre/alias a mostrar en el portfolio
+
+
+7. FUNCIONALIDADES OPCIONALES / FUTURAS
+-----------------------------------------
+Estas funcionalidades no son prioritarias pero se contemplan
+para versiones futuras:
+
+   - Sonido de estático al cambiar de canal (on/off con botón)
+   - Efecto de "encendido de televisor" al cargar la página
+   - Easter eggs ocultos (referencias a Lain)
+   - Modo "sin efectos" para usuarios con sensibilidad al movimiento
+   - Sección de contacto / formulario (requeriría backend o servicio externo)
+   - Animación de cursor personalizado (estilo crosshair o pixel cursor)
+
+
+8. REFERENCIAS VISUALES CLAVE
+--------------------------------
+- Anime: Serial Experiments Lain (1998) — paleta, tipografía, atmósfera
+- Estética CRT / Scanlines — monitores de tubo de rayos catódicos
+- Interfaces de SO años 2000 (Windows 98/XP, sistemas UNIX retro)
+- Cultura web Y2K (GeoCities, interfaces de videojuegos de la época)
+- Visual novel / RPG retro — cuadros de diálogo pixelados
+- Neocities / Old web aesthetics contemporánea
+
+
+9. CRITERIOS DE ACEPTACIÓN
+-----------------------------
+El proyecto se considera completado cuando:
+
+   [x] La web carga sin errores en Chrome, Firefox y Safari modernos
+   [x] Los efectos CRT (scanlines, glitch) son visibles en escritorio
+   [x] El sistema de canales funciona y transiciona correctamente
+   [x] El cuadro de diálogo del personaje cambia frases al hacer clic
+   [x] Los botones de GitHub y Twitter redirigen correctamente
+   [x] La web es usable en móvil (responsive)
+   [x] El GIF del personaje se muestra correctamente
+   [x] La sección de proyectos existe (aunque esté vacía/placeholder)
+   [x] El código está organizado y los valores configurables son editables
+
+
+================================================================
+FIN DEL DOCUMENTO DE REQUISITOS
+================================================================

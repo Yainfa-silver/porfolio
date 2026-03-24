@@ -1,0 +1,55 @@
+/* responsive.css */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .terminal-container {
+        padding: 20px 10px;
+    }
+
+    .boot-sequence h1 {
+        font-size: 2rem;
+    }
+
+    .main-interface {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .tv-channels {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tv-channels ul {
+        align-items: center;
+    }
+
+    .nav-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .channel-navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Reduce CRT effects for mobile performance/readability slightly */
+    .crt-overlay {
+        text-shadow: none; /* remove RGB shadow for performance/clarity */
+    }
+    
+    .screen-curvature::before {
+        /* disable vignette overlay to save painting */
+        display: none;
+    }
+}

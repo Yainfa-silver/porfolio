@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO.SYS // PROJECTS</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/crt-effects.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body class="crt-overlay">
+    <div class="screen-curvature">
+        <div class="scanlines"></div>
+        <main class="terminal-container">
+            <header class="section-header">
+                <h1 class="glitch-text" data-text="> PROJECTS.DAT">> PROJECTS.DAT</h1>
+                <a href="index.html" class="nav-btn-back">[ESC] RETURN TO MAIN</a>
+            </header>
+
+            <section class="projects-content">
+                <div class="loading-state">
+                    <p>ACCESSING DATABASE...</p>
+                    <p class="blink">NO RECORDS FOUND. COMING SOON.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Quick Navigation Menu -->
+    <div class="quick-nav-container">
+        <div id="fs-menu" class="filesystem-menu hidden">
+            <div class="fs-header">Filesystem</div>
+            <div class="fs-divider"></div>
+            <div class="fs-links">
+                <a href="index.html" class="fs-link">
+                    <i data-lucide="home"></i> Inicio
+                </a>
+                <a href="sobre-mi.html" class="fs-link">
+                    <i data-lucide="user"></i> Sobre mi
+                </a>
+                <a href="#" class="fs-link">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/spotify.svg" class="icon-svg" /> Música
+                </a>
+                <a href="#" class="fs-link">
+                    <i data-lucide="gamepad-2"></i> Jueguitos
+                </a>
+                <a href="proyectos.html" class="fs-link">
+                    <i data-lucide="folder-kanban"></i> Proyectos
+                </a>
+                <a href="#" class="fs-link">
+                    <i data-lucide="mail"></i> Contacto
+                </a>
+            </div>
+        </div>
+        <button class="menu-toggle-btn" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/config.js"></script>
+    <script src="js/glitch.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

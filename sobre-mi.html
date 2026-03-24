@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO.SYS // ABOUT_ME</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/crt-effects.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="crt-overlay cross-bg" data-page="about">
+    <div class="screen-curvature">
+        <div class="scanlines"></div>
+        <div id="channel-static" class="static-noise hidden"></div>
+        
+        <div class="top-nav">
+            <div class="nav-left">
+                <img src="assets/gif/character_placeholder.gif" alt="icon" class="nav-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22%3E%3Crect width=%2220%22 height=%2220%22 fill=%22%2355ff55%22/%3E%3C/svg%3E'">
+                <span>Silver</span>
+            </div>
+            <div class="nav-right">
+                <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/simpleicons.svg" class="nav-social-icon social-white" /></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/github.svg" class="nav-social-icon social-white" /></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/x.svg" class="nav-social-icon social-white" /></a>
+                <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/discord.svg" class="nav-social-icon social-white" /></a>
+                <span>es v</span>
+            </div>
+        </div>
+
+        <main class="terminal-container">
+            <h1 class="main-title glitch-text" data-text="Sobre mi :3">Sobre mi :3</h1>
+            
+            <div class="divider">
+                <span>-----------------</span><span class="diamond">♦</span><span>-----------------</span>
+            </div>
+
+            <div class="about-card">
+                <!-- Left stats panel -->
+                <div class="about-sidebar">
+                    <div class="sidebar-avatar">
+                        <img src="assets/gif/character_tall.gif" alt="Tall Avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 250%22%3E%3Crect width=%22100%22 height=%22250%22 fill=%22%23222%22/%3E%3Ctext y=%22125%22 x=%2230%22 font-size=%2220%22 fill=%22%2355ff55%22%3EGIF%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="sidebar-divider">
+                        <span>---</span><span class="diamond">♦</span><span>---</span>
+                    </div>
+                    <div class="sidebar-stats">
+                        <div class="stat-row"><span>PseudoN</span><span>: Silver</span></div>
+                        <div class="stat-row"><span>Nivel</span><span>: 20</span></div>
+                        <div class="stat-row"><span>HP</span><span>: ???</span></div>
+                        <div class="stat-row"><span>Maná</span><span>: ???</span></div>
+                        <div class="stat-row"><span>Rango</span><span>: 01</span></div>
+                    </div>
+                </div>
+
+                <!-- Right Content Panel with internal tabs -->
+                <div class="about-main-panel">
+                    <div class="about-tabs-internal">
+                        <button class="channel-btn active" data-channel="1" title="Presentation"><i data-lucide="file-text"></i></button>
+                        <button class="channel-btn" data-channel="2" title="Technologies"><i data-lucide="settings"></i></button>
+                        <button class="channel-btn" data-channel="3" title="Apps"><i data-lucide="layout-grid"></i></button>
+                        <button class="channel-btn" data-channel="4" title="Network"><i data-lucide="network"></i></button>
+                        <button class="channel-btn" data-channel="5" title="System"><i data-lucide="terminal"></i></button>
+                    </div>
+
+                    <div class="about-content">
+                        <section id="channel-1" class="channel-content active">
+                            <h2>Presentation</h2>
+                            <div class="bio-container">
+                                <p>¡Owa! Soy un desarrollador al que le gusta cacharrear con tecnología.</p>
+                                <p>Trastear con absolutamente todo siempre ha sido lo mio, abrir el portátil familiar, cambiar el código fuente de páginas web, o programar herramientas propias.</p>
+                                <p>Me gusta experimentar y explorar nuevas fronteras digitales.</p>
+                            </div>
+                        </section>
+
+                        <section id="channel-2" class="channel-content hidden">
+                            <div class="tech-box">
+                                <h3 class="tech-title">-Langs-</h3>
+                                <ul id="list-langs" class="tech-icons"></ul>
+                            </div>
+                            <div class="tech-box">
+                                <h3 class="tech-title">-Libs / Frameworks-</h3>
+                                <ul id="list-libs" class="tech-icons"></ul>
+                            </div>
+                            <div class="tech-box">
+                                <h3 class="tech-title">-DBs-</h3>
+                                <ul id="list-dbs" class="tech-icons"></ul>
+                            </div>
+                            <div class="tech-box">
+                                <h3 class="tech-title">-Tools-</h3>
+                                <ul id="list-devops" class="tech-icons"></ul>
+                            </div>
+                        </section>
+
+                        <section id="channel-3" class="channel-content hidden">
+                            <h2>Apps que uso</h2>
+                            <div class="apps-grid" id="list-apps"></div>
+                        </section>
+
+                        <section id="channel-4" class="channel-content hidden">
+                            <h2>Network Status</h2>
+                            <div class="network-stats">
+                                <p>> Connection: WIRED_UP</p>
+                                <p>> Protocol: TCP/IP_P7</p>
+                                <p>> Encryption: LEVEL_4</p>
+                                <p>> Security: OPTIMAL</p>
+                            </div>
+                        </section>
+
+                        <section id="channel-5" class="channel-content hidden">
+                            <h2>System Access</h2>
+                            <div class="system-log">
+                                <p>[ OK ] Initializing core...</p>
+                                <p>[ OK ] Loading UI modules...</p>
+                                <p>[ OK ] Connection established.</p>
+                                <p>_</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- Quick Navigation Menu -->
+    <div class="quick-nav-container">
+        <div id="fs-menu" class="filesystem-menu hidden">
+            <div class="fs-header">Filesystem</div>
+            <div class="fs-divider"></div>
+            <div class="fs-links">
+                <a href="index.html" class="fs-link">
+                    <i data-lucide="home"></i> Inicio
+                </a>
+                <a href="sobre-mi.html" class="fs-link">
+                    <i data-lucide="user"></i> Sobre mi
+                </a>
+                <a href="#" class="fs-link">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/spotify.svg" class="icon-svg" /> Música
+                </a>
+                <a href="#" class="fs-link">
+                    <i data-lucide="gamepad-2"></i> Jueguitos
+                </a>
+                <a href="proyectos.html" class="fs-link">
+                    <i data-lucide="folder-kanban"></i> Proyectos
+                </a>
+                <a href="#" class="fs-link">
+                    <i data-lucide="mail"></i> Contacto
+                </a>
+            </div>
+        </div>
+        <button class="menu-toggle-btn" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/channels.js"></script>
+    <script src="js/glitch.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

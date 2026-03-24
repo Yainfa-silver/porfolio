@@ -1,0 +1,577 @@
+/* main.css */
+
+:root {
+    --bg-color: #0d0a15;       /* Very dark base */
+    --text-color: #55ff55;     /* Phosphor green */
+    --accent-color: #cc99ff;   /* Soft purple from mockup */
+    --border-color: #ffffff;
+    --box-bg: rgba(20, 15, 30, 0.7);
+    
+    --font-head: 'VT323', monospace;
+    --font-body: 'VT323', monospace; /* Using VT323 for everything per mockup pixel look */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* CROSS BACKGROUND PATTERN */
+.cross-bg {
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Force center children if needed */
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-head);
+    font-weight: normal;
+    text-align: center;
+}
+
+ul { list-style: none; }
+
+/* TOP NAV */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+    position: relative;
+    width: 100%;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-social-icon {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.2s;
+}
+
+.social-white {
+    filter: invert(1); /* Make simple icons white */
+}
+
+.nav-social-icon:hover {
+    opacity: 0.7;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--text-color);
+}
+
+/* TERMINAL LAYOUT */
+.terminal-container {
+    width: 100%;
+    max-width: 1000px; /* Slightly wider globally */
+    margin: 40px auto;
+    padding: 0 20px;
+    z-index: 10;
+    position: relative;
+}
+
+body[data-page="about"] .terminal-container {
+    max-width: 1200px; /* Even wider for about page specifically */
+}
+
+.main-title {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+/* DIVIDER */
+.divider {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--border-color);
+    opacity: 0.5;
+    letter-spacing: 2px;
+    width: 100%; /* Ensure it takes full width for centering */
+}
+.diamond {
+    margin: 0 10px;
+}
+
+/* HERO (INDEX) */
+.hero-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hero-avatar img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--border-color);
+    padding: 5px;
+    background: var(--box-bg);
+}
+
+.hero-dialog {
+    flex: 1;
+    margin: 0 20px;
+    border: 1px dashed var(--accent-color);
+    background: var(--box-bg);
+    padding: 15px;
+    min-height: 80px;
+    position: relative;
+}
+
+.dialog-name {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background: var(--bg-color);
+    padding: 0 5px;
+    color: var(--accent-color);
+}
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+    float: right;
+    margin-top: 10px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.hero-levels {
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+/* STATUS BAR */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    color: #000;
+    padding: 2px 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* OPTIONS GRID (INDEX) */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.grid-btn {
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    background: var(--box-bg);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.grid-btn:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.02);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.lucide {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5px;
+}
+
+.icon-svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Make simple icons (black by default) match our theme */
+.brand-spotify {
+    filter: invert(72%) sepia(87%) saturate(382%) hue-rotate(65deg) brightness(101%) contrast(101%);
+}
+
+.channel-btn .lucide {
+    width: 20px;
+    height: 20px;
+}
+
+/* ABOUT PAGE 3-COLUMN LAYOUT */
+.about-card {
+    display: flex;
+    border: 1px solid var(--border-color);
+    background: var(--box-bg);
+    min-height: 500px;
+}
+
+.about-sidebar {
+    width: 300px; /* Wider sidebar as well */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: none; /* Removed the first border */
+}
+
+.sidebar-avatar img {
+    width: 150px;
+    height: 350px; /* Tall GIF as per mockup */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.sidebar-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    color: var(--border-color);
+    position: relative;
+}
+
+.sidebar-divider::before, .sidebar-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+    opacity: 0.3;
+}
+
+.sidebar-divider .diamond {
+    margin: 0 10px;
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+
+.sidebar-stats {
+    width: 100%;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* ABOUT PAGE REFACTOR */
+.about-main-panel {
+    flex: 1;
+    display: flex;
+    background: var(--box-bg);
+}
+
+.about-tabs-internal {
+    width: 32px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border-right: 1px solid var(--border-color); /* The single divider line user requested */
+}
+
+.channel-btn {
+    width: 31px;
+    height: 31px; /* Square buttons */
+    background: transparent;
+    color: var(--border-color);
+    border: 1px solid var(--border-color);
+    border-right: none;
+    margin-bottom: -1px; 
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.channel-btn.active {
+    background: #fff;
+    color: #000;
+}
+
+.channel-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.channel-btn .lucide {
+    width: 14px; /* Slightly smaller to avoid clipping */
+    height: 14px;
+}
+
+.about-content {
+    flex: 1;
+    padding: 25px;
+    position: relative;
+    overflow-y: auto;
+    text-align: left; /* Back to left as requested */
+}
+
+.hidden {
+    display: none !important;
+}
+
+.bio-container p {
+    margin-bottom: 20px;
+    text-align: left; /* Left align requested */
+}
+.network-stats p, .system-log p {
+    text-align: left;
+    margin-bottom: 5px;
+}
+/* TECH ICONS (Mockup 3) */
+.tech-box {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tech-title {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background: var(--bg-color);
+    padding: 0 5px;
+    font-size: 1.2rem;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 80px;
+}
+
+.tech-icon-svg {
+    width: 32px;
+    height: 32px;
+    filter: invert(1); /* Keep them white to match theme */
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.tech-item:hover .tech-icon-svg {
+    opacity: 1;
+    transform: translateY(-2px);
+    filter: invert(72%) sepia(87%) saturate(382%) hue-rotate(65deg) brightness(101%) contrast(101%);
+}
+
+.tech-label {
+    font-size: 0.8rem;
+    color: var(--border-color);
+    opacity: 0.6;
+}
+
+/* APP GRID STYLES */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.app-item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+    transition: all 0.2s;
+}
+
+.app-item-box:hover {
+    border-color: var(--accent-color);
+    background: rgba(255,255,255,0.08);
+}
+
+.app-icon-svg {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+.app-label {
+    font-size: 0.9rem;
+}
+
+/* QUICK NAV MENU / FILESYSTEM */
+.quick-nav-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+}
+
+.menu-toggle-btn {
+    width: 45px;
+    height: 35px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-toggle-btn span {
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    display: block;
+}
+
+.menu-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filesystem-menu {
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 650px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom right;
+}
+
+.filesystem-menu.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+}
+
+.fs-header {
+    padding: 8px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.fs-divider {
+    height: 1px;
+    background: var(--border-color);
+    opacity: 0.5;
+    margin: 0 10px;
+}
+
+.fs-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 10px;
+    gap: 10px;
+}
+
+.fs-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    transition: all 0.2s;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+}
+
+.fs-link:hover {
+    color: var(--accent-color);
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+}
+
+.fs-link i, .fs-link img {
+    width: 18px;
+    height: 18px;
+}
+
+.fs-link .icon-svg {
+    filter: invert(1);
+}
+
+.fs-link:hover .icon-svg {
+    filter: invert(72%) sepia(87%) saturate(382%) hue-rotate(65deg) brightness(101%) contrast(101%);
+}
+
+@media (max-width: 768px) {
+    .filesystem-menu {
+        min-width: calc(100vw - 40px);
+        right: -20px;
+    }
+    
+    .fs-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
