@@ -5,6 +5,17 @@
 
 const PORTFOLIO_CONFIG = {
     name: "Silver",
+    // Character configuration
+    characterIndex: {
+        gifPath: "assets/gif/kuromi.gif",
+        altText: "Kuromi Avatar"
+    },
+    characterAbout: {
+        gifPath: "assets/gif/miku.gif",
+        altText: "Miku Avatar"
+    },
+    topNavLeftGif: "assets/gif/ks.gif",
+    
     // External links
     links: {
         github: "https://github.com/your-username",
@@ -12,12 +23,14 @@ const PORTFOLIO_CONFIG = {
     },
     
     // Character dialogue phrases
-    dialogPhrases: [
-        "¡Hola! Soy Silver.",
-        "Bienvenido a mi rincón digital.",
-        "¿Has probado mis juegos?",
-        "Conectando con el Wired...",
-        "Todo está funcionando correctamente."
+    dialogPhrasesIndex: [
+        "Este es el rincón de Silver en la Wired.",
+        "Haz clic en el Filesystem para navegar."
+    ],
+    dialogPhrasesAbout: [
+        "Estás viendo la biografía de Silver.",
+        "Miku está aquí para guiarte.",
+        "Explora los diferentes canales de datos."
     ],
 
     // Tools & Technologies with Simple Icons slugs
@@ -65,6 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (ghLink) ghLink.href = PORTFOLIO_CONFIG.links.github;
     if (twLink) twLink.href = PORTFOLIO_CONFIG.links.twitter;
+
+    // Setup character
+    const characterImg = document.getElementById('anime-character');
+    const navCharacterIcon = document.querySelector('.nav-character-icon');
+    const isAboutPage = document.body.getAttribute('data-page') === 'about';
+    
+    const charConfig = isAboutPage ? PORTFOLIO_CONFIG.characterAbout : PORTFOLIO_CONFIG.characterIndex;
+    
+    if (charConfig && characterImg) {
+        characterImg.src = charConfig.gifPath;
+        characterImg.alt = charConfig.altText;
+    }
+
+    if (navCharacterIcon && PORTFOLIO_CONFIG.topNavLeftGif) {
+        navCharacterIcon.src = PORTFOLIO_CONFIG.topNavLeftGif;
+    }
+    
+    // Setup character
 
     const getIconUrl = (slug) => `https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/${slug.replace('.', 'dot')}.svg`;
 

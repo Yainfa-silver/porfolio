@@ -137,8 +137,8 @@ body[data-page="about"] .terminal-container {
 }
 
 .hero-avatar img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     border: 1px solid var(--border-color);
     padding: 5px;
     background: var(--box-bg);
@@ -260,8 +260,8 @@ body[data-page="about"] .terminal-container {
 }
 
 .sidebar-avatar img {
-    width: 150px;
-    height: 350px; /* Tall GIF as per mockup */
+    width: 200px;
+    height: 280px; /* Adjusted height for better proportions */
     object-fit: contain;
     margin-bottom: 10px;
 }
