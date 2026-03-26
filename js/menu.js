@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             fsMenu.classList.toggle('hidden');
+            menuToggle.classList.toggle('open');
         });
 
-        document.addEventListener('click', (e) => {
-            if (!fsMenu.contains(e.target) && e.target !== menuToggle) {
-                fsMenu.classList.add('hidden');
-            }
-        });
+        // Se elimina el cierre al click fuera para mantener abierto hasta nuevo click en el botón
+        // document.addEventListener('click', (e) => {
+        //     if (!fsMenu.contains(e.target) && e.target !== menuToggle) {
+        //         fsMenu.classList.add('hidden');
+        //     }
+        // });
     }
 });

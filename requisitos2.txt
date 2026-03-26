@@ -1,0 +1,119 @@
+# 📄 Requisitos: Integración de playlists de Spotify en portfolio web
+
+## 🎯 Objetivo
+
+Crear un componente para un portfolio web que muestre información de playlists de Spotify de forma visual y automática, sin exponer credenciales sensibles en el frontend.
+
+---
+
+## ⚙️ Stack y entorno
+
+* Frontend: (especificar: React / Vue / Vanilla JS)
+* Hosting: GitHub Pages o despliegue desde repositorio en GitHub
+* Backend: funciones serverless (ej: Vercel o Netlify)
+* API externa: Spotify Web API
+
+---
+
+## 🔐 Seguridad
+
+* NO exponer `client_secret` en el frontend
+* Usar variables de entorno en el backend/serverless
+* Implementar autenticación con Spotify usando **Client Credentials Flow**
+* El frontend solo debe comunicarse con el endpoint propio (no directamente con Spotify)
+
+---
+
+## 🔌 Backend (serverless function)
+
+Crear un endpoint `/api/playlist` que:
+
+### Funcionalidad:
+
+1. Obtenga un access token desde Spotify
+2. Consulte la API de playlists:
+
+   * Endpoint: `https://api.spotify.com/v1/playlists/{playlist_id}`
+3. Devuelva un JSON simplificado con:
+
+   * nombre de la playlist
+   * descripción
+   * imagen
+   * lista de canciones:
+
+     * nombre
+     * artista(s)
+     * duración
+     * enlace a Spotify
+
+### Requisitos técnicos:
+
+* Usar fetch o axios
+* Manejar errores (token expirado, rate limits, etc.)
+* Cache opcional (recomendado)
+
+---
+
+## 💻 Frontend
+
+Crear un componente que:
+
+### Funcionalidad:
+
+* Haga fetch a `/api/playlist`
+* Muestre:
+
+  * portada de la playlist
+  * título
+  * lista de canciones
+* Cada canción debe incluir:
+
+  * título
+  * artista
+  * link a Spotify
+
+### UI/UX:
+
+* Diseño limpio tipo portfolio
+* Responsive
+* Hover effects en canciones
+* Opcional: reproductor embebido
+
+---
+
+## 🔄 Alternativa sin backend (fallback)
+
+Si no se usa serverless:
+
+* Generar un archivo `playlist.json` con datos preprocesados
+* El frontend leerá ese JSON
+* Script externo (Node.js o Python) para actualizar datos manualmente
+
+---
+
+## 🚀 Extras opcionales
+
+* Filtrar canciones
+* Mostrar duración total
+* Ordenar tracks
+* Animaciones suaves
+* Modo oscuro
+
+---
+
+## 📦 Entregables esperados
+
+* Código frontend listo para producción
+* Función serverless funcional
+* README con:
+
+  * configuración de variables de entorno
+  * instrucciones de despliegue
+
+---
+
+## ⚠️ Consideraciones
+
+* Cumplir límites de rate de Spotify
+* No almacenar datos sensibles en cliente
+* Código limpio y modular
