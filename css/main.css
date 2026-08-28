@@ -487,21 +487,19 @@ body[data-page="about"] .terminal-container {
 }
 
 .menu-toggle-btn.open span {
-    width: 2px;
-    height: 20px;
-    margin: 0 4px;
+    width: 14px;
 }
 
 .menu-toggle-btn.open span:nth-child(1) {
-    transform: translate(-4px, 2px);
+    transform: translate(-6px, 6px) rotate(90deg);
 }
 
 .menu-toggle-btn.open span:nth-child(2) {
-    transform: translate(0, 0);
+    transform: rotate(90deg);
 }
 
 .menu-toggle-btn.open span:nth-child(3) {
-    transform: translate(4px, -2px);
+    transform: translate(6px, -6px) rotate(90deg);
 }
 
 .menu-toggle-btn:hover {
